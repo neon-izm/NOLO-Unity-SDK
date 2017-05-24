@@ -2,7 +2,7 @@
 
 - [Get Started](./Documents/zh_cn/快速入门.md)
 
-- [Get Started](./Documents/zh_cn/快速入门.md)
+- [Reference Design](./Documents/zh_cn/快速入门.md)
 
 - [API Support](./Documents/zh_cn/接口说明.md)
 
