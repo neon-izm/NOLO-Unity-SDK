@@ -2,8 +2,8 @@
 
 - [Get Started](./Documents/en_us/GetStarted.md)
 
-- [Reference Design](./Documents/zh_cn/快速入门.md)
+- [Reference Design](./Documents/en_us/ReferenceDesign.md)
 
-- [API Support](./Documents/zh_cn/接口说明.md)
+- [API Support](./Documents/en_us/APISupport.md)
 
-- [FAQ](./Documents/zh_cn/常见问题解答.md)
+- [FAQ](./Documents/en_us/FAQ.md)
