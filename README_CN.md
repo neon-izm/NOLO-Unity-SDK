@@ -3,7 +3,7 @@
 
 - [快速入门](./Documents/zh_cn/快速入门.md)
 
-- [参考设计](./Documents/zh_cn/快速入门.md)
+- [参考设计](./Documents/zh_cn/参考设计.md)
 
 - [接口说明](./Documents/zh_cn/接口说明.md)
 
