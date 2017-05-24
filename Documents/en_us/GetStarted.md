@@ -1,61 +1,61 @@
-# 快速入门
+# Get Started
 
-## 下载NOLO SDK For Unity
-* 将[NOLO SDK For Unity](https://github.com/LyrobotixNolo/Unity/tree/master/UnityPackage)下载到本地。
-## 导入unity
-* 下载并安装[Unity](https://unity3d.com)。NOLO SDK For Unity开发环境为Unity5.4.1，建议采用此版本以上的Unity版本。  
+## Download NOLO SDK For Unity
+* download [NOLO SDK For Unity](https://github.com/LyrobotixNolo/Unity/tree/master/UnityPackage)to your loacl.
+## Import to Unity
+* Download and Install [Unity](https://unity3d.com).NOLO SDK For Unity develop with Unity5.4.1,It is recommended to use the Unity version or above this version.   
 
-* 打开Unity,点击“NEW”,填写好你的工程名字和路径。点击“Creata project”,创建一个新的Unity工程。  
+* Open Unity,Click “NEW”,Fill in your project name and path.Click “Creata project”,Create a new Unity project.  
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/createunityproject.png"></div>  
 
-  * 点击菜单 Assets->Import Package->Custom Package  
+  * Click menu Assets->Import Package->Custom Package  
   
   <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/importpackage.PNG"></div>  
   
-* 浏览到NOLO SDK For Unity所在的目录并打开。  
+* Browse to the path for NOLO SDK For Unity and open it.   
 
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/selectpackage.PNG"> </div> 
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/selectopen.png"></div>  
 
-* 导入完成。  
+* Import complete.  
 
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/importfinish.png"></div>  
 
-## 打包Gear VR示例
-* 打开NoloVR\Example\General\Test场景。 
+## Build Gear VR Example
+* Open NoloVR\Example\General\Test 
 
-* 点击File->Build Setting，点击Add Open Scenes,在Playform中选择Android，点击Switch Playform。  
+* Click File->Build Setting,Click Add Open Scenes,Choose Android and Click Switch Playform.  
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/switch playform.png"></div>
-* 点击Player Settings，修改Bundle Identifier，勾选Virtual Reality Supported并添加Oculus SDK。  
+* Click Player Settings,Modify Bundle Identifier,Check Virtual Reality Supported and Add Oculus SDK.  
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/playersetting.png"></div>  
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/settings.png"></div>  
-* 点击build，完成后然后安装到手机。
+* Click build,then install to mobile phone.
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/build.png"></div> 
 
-## 打包CardBoard示例
-* 用同样的方式导入[CardBoard SDK For Unity](https://developers.google.com/cardboard/unity/download)
+## Build CardBoard Example
+* Import [CardBoard SDK For Unity](https://developers.google.com/cardboard/unity/download)to the same way.
 
-* 打开NoloVR\Example\General\Test场景。  
+* Open NoloVR\Example\General\Test.  
 
-* 将CardBoard的GvrViewerMain拖入场景中。  
+* Put CardBoard GvrViewerMain in this Scene. 
 
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/vrcamera.png"></div>  
 
-* 点击File->Build Setting，点击Add Open Scenes,在Playform中选择Android，点击Switch Playform。  
+* Click File->Build Setting,Click Add Open Scenes,Choose Android,Click Switch Playform.  
 
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/switch playform.png"></div>  
 
-* 点击Player Settings，修改Bundle Identifier。  
+* Click Player Settings,Modify Bundle Identifier。  
 
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/playersetting.png"></div>  
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/cardboardsetting.png"></div>  
 
-* 点击build然后安装到手机。   
+* Click build,then install to mobile phone.   
 
 <div><img width = 400 heigh = 280 src="https://github.com/LyrobotixNolo/Unity/blob/master/Documents/Image/build.png"></div> 
 
 
-## 其他VR头盔SDK
-* 将头盔SDK中的预制体拖拽到NoloManager->Hmd(camera)下，变成Hmd(camera)的子物体，并将position和rotation都清零。
-* NoloManager上找到挂载的NoloVR_Manager.cs脚本，将游戏运行时姿态真正发生变化的Camera物体拖至VR Camera处。
-* 其他步骤参考Gear VR和CardBoard。
+## Other VR SDK
+* Drag the helmet preform in SDK to NoloManager->Hmd(camera),Become Hmd(camera)'s child，Reset position and rotation.
+* Find NoloVR_Manager.cs from NoloManager,Drag the Camera object that rotation really changes in the game's runtime to VR Camera.
+* Other steps reference Gear VR and CardBoard.
