@@ -1,6 +1,6 @@
 # NOLO SDK For Unity
 
-- [Get Started](./Documents/en_us/Get Started.md)
+- [Get Started](./Documents/en_us/GetStarted.md)
 
 - [Reference Design](./Documents/zh_cn/快速入门.md)
 
