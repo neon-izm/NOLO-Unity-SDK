@@ -7,3 +7,10 @@
 - [API Support](https://github.com/LyrobotixNolo/NOLO-Unity/wiki)
 
 - [FAQ](./Documents/en_us/FAQ.md)
+
+
+
+
+# Pull requests
+
+[Full Playform](https://github.com/demonixis/NoloVR-Unity-SDK/tree/fix-otherplatforms)
