@@ -13,4 +13,4 @@
 
 # Pull requests
 
-[Full Playform](https://github.com/demonixis/NoloVR-Unity-SDK/tree/fix-otherplatforms)
+[Null Playform](https://github.com/demonixis/NoloVR-Unity-SDK/tree/fix-otherplatforms)
