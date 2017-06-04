@@ -1,12 +1,12 @@
 # NOLO SDK For Unity
 
-- [Get Started](./Documents/en_us/GetStarted.md)
+- [Get Started](./Docs/en_us/GetStarted.md)
 
-- [Reference Design](./Documents/en_us/ReferenceDesign.md)
+- [Reference Design](./Docs/en_us/ReferenceDesign.md)
 
-- [API Support](https://github.com/LyrobotixNolo/NOLO-Unity/wiki)
+- [API Support](https://github.com/LyrobotixNolo/NOLO-Unity-SDK/wiki)
 
-- [FAQ](./Documents/en_us/FAQ.md)
+- [FAQ](./Docs/en_us/FAQ.md)
 
 
 
