@@ -3,7 +3,7 @@ Develop moblie VR/AR with Unity.
 
 For first time users, see the [Get Started](./Docs/en_us/GetStarted.md)([快速入门](./Docs/zh_cn/快速入门.md)).  
 
-APP can run in any Android device,include phone or VR one machine.   
+APP can run in any Android device,include mobile phone or all-in-one device.  
 
 For example:
 - [Gear VR](https://github.com/NOLOVR/NOLO-Unity-SDK/blob/master/Docs/en_us/GetStarted.md#build-gear-vr-example)
