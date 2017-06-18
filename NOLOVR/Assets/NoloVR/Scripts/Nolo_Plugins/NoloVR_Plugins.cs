@@ -206,7 +206,7 @@ public class NoloVR_Plugins
         [DllImport(dllName, EntryPoint = "set_Nolo_TriggerHapticPulse")]
         public static extern bool Nolovr_TriggerHapticPulse(int type,int intensity);
 
-        [DllImport(dllName, EntryPoint = "disConnenct_FunCallBack")]
+        [DllImport(dllName, EntryPoint = "disConnect_FunCallBack")]
         public static extern bool disConnenct_FunCallBack(DisConnectedCallBack callback);
 
         [DllImport(dllName, EntryPoint = "connectSuccess_FunCallBack")]
@@ -232,7 +232,7 @@ public class NoloVR_Plugins
 #if (UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
         [DllImport(dllName, EntryPoint = "get_Nolo_StateByDeviceType")]
         public static extern int GetDeviceTrackingStatus(int type);
-        [DllImport(dllName, EntryPoint = "get_Nolo_HMDInirPostion")]
+        [DllImport(dllName, EntryPoint = "get_Nolo_HMDInitPosition")]
         public static extern Nolo_Vector3 GetHmdInitPosition();
 #elif UNITY_ANDROID
         [DllImport(dllName)]

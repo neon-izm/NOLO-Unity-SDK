@@ -52,6 +52,7 @@ public class NoloVR_WinPlayform : NoloVR_Playform
     public override void DisconnectDevice()
     {
         playformError = NoloError.DisConnect;
+        NoloVR_Plugins.API_1_0_0.close_Nolo_ZeroMQ();
     }
 
     public override void DisConnectedCallBack()
