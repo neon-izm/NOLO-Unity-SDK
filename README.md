@@ -10,7 +10,16 @@ For example:
 - [Cardboard](https://github.com/NOLOVR/NOLO-Unity-SDK/blob/master/Docs/en_us/GetStarted.md#build-cardboard-example)
 - [Other](https://github.com/NOLOVR/NOLO-Unity-SDK/blob/master/Docs/en_us/GetStarted.md#other-vr-sdk)
 
-If you have problems,Check [FAQ](https://github.com/NOLOVR/NOLO-Unity-SDK/issues).
+If you have problems,Check [FAQ](https://github.com/NOLOVR/NOLO-Unity-SDK/issues).  
+## For developer
+* It is important to add the double click system button to reset camera's yaw.  
+such as:  
+Gear VR:InputTracking.Recenter();  
+Cardboard:GvrViewer.Instance.Recenter();
+* about application icon  
+We would like to be able to add an icon on the app icon,Indicates support for nolo devices,Material has been in unitypackage.
+
+
 ## NOLOVR SDK Version 1.1.3
 Fixes can not properly shut down the Unity editor and the occasional crash problem.  
 Development environment: Unity 5.4.1.   
