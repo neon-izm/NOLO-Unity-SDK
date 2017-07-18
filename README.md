@@ -20,10 +20,11 @@ Cardboard:GvrViewer.Instance.Recenter();
 We would like to be able to add an icon on the app icon,Indicates support for nolo devices,Material has been in unitypackage.
 
 
-## NOLOVR SDK Version 1.1.3
-Fixes can not properly shut down the Unity editor and the occasional crash problem.  
-Development environment: Unity 5.4.1.   
-Only support Windows playform and Android playform.  
+## NOLOVR SDK Version 1.1.4
+
+Fixes can't properly shut down the Unity editor and the stop run crash problem. 
+Test in Unity 5.4.1,Unity 5.6.1,Unity 5.6.2.  
+Add NoloVR_OtherPlayform.cs.you can develop in Mac but can't debug in Mac.    
 Documentation for the API is available on the [Wiki](https://github.com/NOLOVR/NOLO-Unity-SDK/wiki).
 
 

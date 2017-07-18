@@ -47,7 +47,7 @@ public abstract class NoloVR_Playform
 #elif UNITY_ANDROID
             instance = new NoloVR_AndroidPlayform();
 #else
-            Debug.Log("NoloVR  Don't support this playform");
+           instance = new NoloVR_OtherPlayform();
 #endif
         }
         return instance;
