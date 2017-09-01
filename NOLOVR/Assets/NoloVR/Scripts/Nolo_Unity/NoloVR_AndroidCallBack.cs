@@ -8,9 +8,11 @@
 using UnityEngine;
 
 public class NoloVR_AndroidCallBack : MonoBehaviour {
-    //Android Callback
+    /// <summary>
+    /// Android USB connect or dicconnect callback message
+    /// </summary>
+    /// <param name="msg">"usb 设备断开":usb device been pulled out callback,"usb 设备接入":usb device plug in phone callback</param>
     public void usbDeviceState(string msg) {
-        Debug.Log("NoloVR_AndroidCallBack:"+msg);
         switch (msg)
         {
             case "usb 设备断开":

@@ -33,11 +33,50 @@ public struct Nolo_Transform
     }
 }
 
-
-public class NoloVR_Utils
+public class NOLO_Events
 {
-    public static Vector3 RecenterPos(int index)
+    public enum EventsType
     {
-        return Vector3.zero;
+        TrackingOutofRange,
+        TrackingInRange,
+        TurnAround,
+        ConnectNoloDevice
     }
+    public delegate void Handler(params object[] args);
+
+    public static void Listen(EventsType eventMessage, Handler action)
+    {
+        var actions = listeners[eventMessage] as Handler;
+        if (actions != null)
+        {
+            listeners[eventMessage] = actions + action;
+        }
+        else
+        {
+            listeners[eventMessage] = action;
+        }
+    }
+
+    public static void Remove(EventsType eventMessage, Handler action)
+    {
+        var actions = listeners[eventMessage] as Handler;
+        if (actions != null)
+        {
+            listeners[eventMessage] = actions - action;
+        }
+    }
+
+    public static void Send(EventsType eventMessage, params object[] args)
+    {
+        var actions = listeners[eventMessage] as Handler;
+        if (actions != null)
+        {
+            actions(args);
+        }
+    }
+
+    private static Hashtable listeners = new Hashtable();
+
 }
+
+

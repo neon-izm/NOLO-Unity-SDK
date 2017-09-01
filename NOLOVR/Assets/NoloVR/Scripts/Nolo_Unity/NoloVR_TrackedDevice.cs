@@ -11,15 +11,22 @@ public class NoloVR_TrackedDevice : MonoBehaviour {
 
     public NoloDeviceType deviceType;
     private GameObject vrCamera;
-    private Vector3 centralPointVector = new Vector3(0, 0.09f, 0.06f);
-
     void Start()
     {
         vrCamera = NoloVR_Manager.GetInstance().VRCamera;
     }
 	void Update () {
+        //更新位置
         UpdatePose();
     }
+
+    private float camerayaw;
+    private float noloyaw;
+    private float resetyaw;
+    private float prersetyaw;
+    private float resultyaw;
+    private float angleAdjustmentRate = 1f / 120f;
+    private Vector3 centralPointVector = new Vector3(0, 0.09f, 0.06f);
 
     void UpdatePose()
     {
@@ -32,13 +39,34 @@ public class NoloVR_TrackedDevice : MonoBehaviour {
                 transform.localPosition = pose.pos;
                 return;
             }
-            //pose.rot.eulerAngles.y;1
-            //vrCamera.transform.rotation.eulerAngles.y;2
-            //transform.localRotation.eulerAngles.y;3
-            //3 = 2>>1;
+            //Correct the camera yaw
+            noloyaw = pose.rot.eulerAngles.y;
+            resetyaw = noloyaw - camerayaw > 0 ? noloyaw - camerayaw : noloyaw - camerayaw + 360;
+            prersetyaw = transform.localRotation.eulerAngles.y;
+            resultyaw = resetyaw - prersetyaw;
+            if (resultyaw > -360 && resultyaw < -340)
+            {
+                transform.localRotation = Quaternion.Euler(0, prersetyaw + angleAdjustmentRate, 0);
+            }
+            else if (resultyaw > 0 && resultyaw < 20)
+            {
+                transform.localRotation = Quaternion.Euler(0, prersetyaw + angleAdjustmentRate, 0);
+            }
+            else if (resultyaw > -20 && resultyaw < 0)
+            {
+                transform.localRotation = Quaternion.Euler(0, prersetyaw - angleAdjustmentRate, 0);
+            }
+            else
+            {
+                transform.localRotation = Quaternion.Euler(0, resetyaw, 0);
+            }
+            camerayaw = vrCamera.transform.localRotation.eulerAngles.y;
+            //Correct the camera position
+            var cameraLoaclPosition = transform.localRotation * vrCamera.transform.localPosition;
+            var noloCentralPointVector = transform.localRotation * centralPointVector;
+            transform.localPosition = pose.pos - cameraLoaclPosition - noloCentralPointVector;
 
-            //transform.localRotation = Quaternion.Euler(0, HMDRotationFuse(pose.rot.eulerAngles.y, vrCamera.transform.rotation.eulerAngles.y), 0);
-            transform.localPosition = pose.pos - vrCamera.transform.localPosition - vrCamera.transform.localRotation * centralPointVector;
+           
 
         }
         else
@@ -46,10 +74,5 @@ public class NoloVR_TrackedDevice : MonoBehaviour {
             transform.localPosition = pose.pos;
             transform.localRotation = pose.rot;
         }
-    }
-    float HMDRotationFuse(float nolo,float phone)
-    {
-        float difference = nolo - phone;
-        return transform.localRotation.eulerAngles.y - difference;
     }
 }

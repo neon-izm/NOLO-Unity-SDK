@@ -34,7 +34,6 @@ public class NoloVR_AndroidPlayform : NoloVR_Playform
             playformError = NoloError.ConnectFail;
             return false;
         }
-        ConnectDevice();
         return true;
     }
 

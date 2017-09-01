@@ -6,7 +6,6 @@ public class UI_Test : MonoBehaviour {
 	void Start () {
         UIText = GetComponent<Text>();
     }
-    Vector3 pre = Vector3.zero;
 
     void Update()
     {
@@ -37,6 +36,6 @@ public class UI_Test : MonoBehaviour {
             + "RIGHT AXIS    :" + NoloVR_Controller.GetDevice(NoloDeviceType.RightController).GetAxis() + "\n"
             + "RIGHT ELE     :" + NoloVR_Plugins.GetElectricity(2) + "\n"
             + "RIGHT TRACK   :" + NoloVR_Plugins.GetTrackingStatus(2) + "\n";
-
+        
     }
 }

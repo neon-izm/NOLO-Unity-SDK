@@ -7,7 +7,13 @@
 
 using UnityEngine;
 
+
 public class NoloVR_Controller {
+
+    static bool isTurnAround = false;
+
+    static Vector3 recPosition = Vector3.zero;
+
     //button mask
     public class ButtonMask
     {
@@ -130,9 +136,26 @@ public class NoloVR_Controller {
                 preControllerStates = controllerStates;
                 if (NoloVR_Playform.InitPlayform().GetPlayformError() == NoloError.None)
                 {
-                    pose = NoloVR_Plugins.GetPose(index);
                     controllerStates = NoloVR_Plugins.GetControllerStates(index);
                     trackingStatus = NoloVR_Plugins.GetTrackingStatus(index);
+                    if (isTurnAround)
+                    {
+                        if (NoloVR_Controller.recPosition == Vector3.zero)
+                        {
+                            NoloVR_Controller.recPosition = NoloVR_Plugins.GetPose(0).pos;
+                        }
+                        pose = NoloVR_Plugins.GetPose(index);
+                        //pose.rot *= new Quaternion(0, 1, 0, 0);
+                        Vector3 rot = pose.rot.eulerAngles;
+                        rot += new Vector3(0, 180, 0);
+                        pose.rot = Quaternion.Euler(rot);
+                        pose.pos.x = NoloVR_Controller.recPosition.x * 2 - pose.pos.x;
+                        pose.pos.z = NoloVR_Controller.recPosition.z * 2 - pose.pos.z;
+
+                        return;
+                    }
+                    NoloVR_Controller.recPosition = Vector3.zero;
+                    pose = NoloVR_Plugins.GetPose(index);
                 }
             }
         }
@@ -147,6 +170,7 @@ public class NoloVR_Controller {
         }
     }
     
+
     //device manager
     public static NoloDevice[] devices;
     public static NoloDevice GetDevice(NoloDeviceType deviceIndex)
@@ -164,6 +188,22 @@ public class NoloVR_Controller {
     public static NoloDevice GetDevice(NoloVR_TrackedDevice trackedObject)
     {
         return GetDevice(trackedObject.deviceType);
+    }
+
+    //turn around events
+
+    static void TurnAroundEvents(params object[] args)
+    {
+        isTurnAround = !isTurnAround;
+        Debug.Log("turnaround");
+    }
+    public static void Listen()
+    {
+        NOLO_Events.Listen(NOLO_Events.EventsType.TurnAround, TurnAroundEvents);
+    }
+    public static void Remove()
+    {
+        NOLO_Events.Remove(NOLO_Events.EventsType.TurnAround, TurnAroundEvents);
     }
 
 }
