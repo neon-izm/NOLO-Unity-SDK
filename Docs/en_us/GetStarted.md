@@ -1,7 +1,7 @@
 # Get Started
 
 ## Download NOLO SDK For Unity
-* Download [NOLO SDK For Unity](https://github.com/NOLOVR/NOLO-Unity-SDK/blob/master/NoloVR_SDK_1.1.2_20170524.unitypackage) to your local.
+* Download [NOLO SDK For Unity](https://github.com/NOLOVR/NOLO-Unity-SDK/blob/master/NoloVR_SDK_1.1.6_20170901.unitypackage) to your local.
 ## Import to Unity
 * Download and Install [Unity](https://unity3d.com) NOLO SDK For Unity develop with Unity5.4.1,It is recommended to use the Unity version or above this version.   
 
